@@ -37,7 +37,7 @@ leases_table = []
 
 # scrape function for contracts
 def scrape_contracts():
-    contracts_total_value = contract_driver.find_element(By.XPATH, '//*[@id="main-content"]/div/div/div[4]/div[1]/div[1]/div[2]/button[2]')
+    contracts_total_value = contract_driver.find_element(By.XPATH, '//*[@id="main-content"]/div/div/div[5]/div[1]/div[1]/div[2]/button[2]')
 
     contracts_total_value.click()
     
@@ -56,7 +56,7 @@ def scrape_contracts():
         # trying to find the button to get the next contract table
         try:
             # finding the next button element
-            next = contract_driver.find_element(By.XPATH, '//*[@id="main-content"]/div/div/div[4]/div[1]/div[3]/div[2]/button[8]')
+            next = contract_driver.find_element(By.XPATH, '//*[@id="main-content"]/div/div/div[5]/div[1]/div[3]/div[2]/button[8]')
 
             # asks whether or not the next button is enabled
             # if the button is not enabled, then break the function
@@ -78,7 +78,7 @@ def scrape_contracts():
 def scrape_grants():
     time.sleep(2)
 
-    grants_total_value = grant_driver.find_element(By.XPATH, '//*[@id="main-content"]/div/div/div[4]/div[2]/div[1]/div[2]/button[2]')
+    grants_total_value = grant_driver.find_element(By.XPATH, '//*[@id="main-content"]/div/div/div[5]/div[2]/div[1]/div[2]/button[2]')
 
     grants_total_value.click()
     
@@ -93,7 +93,7 @@ def scrape_grants():
     
         try:
         
-            next = grant_driver.find_element(By.XPATH, '//*[@id="main-content"]/div/div/div[4]/div[2]/div[3]/div[2]/button[8]')
+            next = grant_driver.find_element(By.XPATH, '//*[@id="main-content"]/div/div/div[5]/div[2]/div[3]/div[2]/button[8]')
     
             if not next.is_enabled():
                 break
@@ -113,10 +113,7 @@ def scrape_leases():
     # apply to scrape_leases() as like the contracts function,
     # their structures are extremely similar
 
-    leases_by_date = leases_driver.find_element(By.XPATH, '//*[@id="main-content"]/div/div/div[4]/div[3]/div[1]/div[2]/button[3]')
-    leases_by_date.click()
-
-    leases_total_value = leases_driver.find_element(By.XPATH, '//*[@id="main-content"]/div/div/div[4]/div[3]/div[1]/div[2]/button[2]')
+    leases_total_value = leases_driver.find_element(By.XPATH, '//*[@id="main-content"]/div/div/div[5]/div[3]/div[1]/div[2]/button[2]')
     leases_total_value.click()
 
     # leases while loop
@@ -130,7 +127,7 @@ def scrape_leases():
 
         try:
             
-            next = leases_driver.find_element(By.XPATH, '//*[@id="main-content"]/div/div/div[4]/div[3]/div[3]/div[2]/button[8]')
+            next = leases_driver.find_element(By.XPATH, '//*[@id="main-content"]/div/div/div[5]/div[3]/div[3]/div[2]/button[8]')
             
             if not next.is_enabled():
                 break
